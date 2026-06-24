@@ -1,4 +1,4 @@
-class_name Stat extends StatRoute
+class_name Stat extends StatPath
 
 signal base_changed(delta: float)
 signal value_changed(delta: float)

@@ -117,7 +117,7 @@ func get_stat(path: String) -> Stat:
 		return null
 
 	var parts := Array(path.split("/", false))
-	var current := get(parts.pop_front()) as StatRoute
+	var current := get(parts.pop_front()) as StatPath
 	while current != null:
 		# Found leaf, return as Stat
 		if parts.is_empty():
