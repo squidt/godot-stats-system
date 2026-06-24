@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="HitPipeline" format=3 uid="uid://cbhc4rja5ihja"]
+
+[ext_resource type="Script" uid="uid://c1sm84u1o6xm6" path="res://addons/stats/combat/hit/handlers/handler.gd" id="1_cku4s"]
+[ext_resource type="Script" uid="uid://170f1imxclq6" path="res://addons/stats/combat/hit/handlers/handle_dodge.gd" id="2_7426c"]
+[ext_resource type="Script" uid="uid://b2b7nl3qjy2mi" path="res://addons/stats/combat/hit/handlers/handle_armor.gd" id="3_dprjn"]
+[ext_resource type="Script" uid="uid://5ck58kjsof2h" path="res://addons/stats/combat/hit/handlers/handle_resist.gd" id="4_gwlk3"]
+[ext_resource type="Script" uid="uid://bqm37wfy5w03k" path="res://addons/stats/combat/hit/handlers/pipeline.gd" id="5_7ouaq"]
+
+[sub_resource type="Resource" id="Resource_vxqnb"]
+script = ExtResource("2_7426c")
+metadata/_custom_type_script = "uid://170f1imxclq6"
+
+[sub_resource type="Resource" id="Resource_des3o"]
+script = ExtResource("3_dprjn")
+metadata/_custom_type_script = "uid://b2b7nl3qjy2mi"
+
+[sub_resource type="Resource" id="Resource_70fs8"]
+script = ExtResource("4_gwlk3")
+metadata/_custom_type_script = "uid://5ck58kjsof2h"
+
+[resource]
+script = ExtResource("5_7ouaq")
+handlers = Array[ExtResource("1_cku4s")]([SubResource("Resource_vxqnb"), SubResource("Resource_des3o"), SubResource("Resource_70fs8")])
+metadata/_custom_type_script = "uid://bqm37wfy5w03k"

@@ -1,0 +1,9 @@
+*.obsidian
+*.godot
+*.zed
+icon.svg.import
+icon.svg
+todo.txt
+addons/gut
+examples
+tests
