@@ -16,7 +16,7 @@ func get_stat(path: String = "") -> Stat:
 
 	var parts := Array(path.split("/", false))
 	var as_enum := Damage.string_to_type(parts.pop_front())
-	var current := types.get(as_enum, null) as StatPath
+	var current := types.get_or_add(as_enum, Stat.make(0.0)) as StatPath
 	while current != null:
 		if parts.is_empty():
 			return current
