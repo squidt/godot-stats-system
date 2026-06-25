@@ -23,9 +23,9 @@ func _to_string() -> String:
 	return (
 		"lvl(%.2f) | ap_pen_multi(%.2f) | ap_stop_multi(%.2f) | durability(%.2f) | effective(%.2f)"
 		% [
-			level,
-			ap_damage_pen_multi,
-			ap_damage_stop_multi,
+			level.get_value(),
+			ap_damage_pen_multi.get_value(),
+			ap_damage_stop_multi.get_value(),
 			durability.get_value(),
 			get_effective_level()
 		]
@@ -38,17 +38,17 @@ func resist(out: HitHandler.Result) -> void:
 	# Stopped by armor
 	var pen_diff = get_penetration(damage)
 	if pen_diff < PEN_NONE:
-		durability.base -= damage.ap_damage * ap_damage_stop_multi
+		durability.base -= damage.ap_damage * ap_damage_stop_multi.get_value()
 		out.remainder = 0.0
 		out.is_aborted = true
 	# Penetration
 	else:
-		durability.base -= damage.ap_damage * ap_damage_pen_multi
+		durability.base -= damage.ap_damage * ap_damage_pen_multi.get_value()
 		out.remainder *= get_damage_factor(pen_diff)
 
 
 func get_penetration(damage: DamageBallistic) -> float:
-	return get_effective_level() - damage.ap_level
+	return damage.ap_level - get_effective_level()
 
 
 ## Higher [param pen_diff] values equal more penetration

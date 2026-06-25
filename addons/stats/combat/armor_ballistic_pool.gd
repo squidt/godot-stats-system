@@ -31,4 +31,4 @@ func add(health_path: String, armor: ArmorBallistic) -> ArmorBallisticPool:
 func try_armor(out: HitHandler.Result) -> void:
 	var armor = parts.get(out.target)
 	if armor:
-		armor.resisted(out)
+		armor.resist(out)
